@@ -62,7 +62,7 @@ var play = function(mp3_url, callback = function() {}) {
 };
 
 var getSpeechUrl = function(text, host, callback) {
-  googletts(text, language, 1).then(function (url) {
+  googletts(text, language, speechSpeed).then(function (url) {
 console.log(url);
     onDeviceUp(host, url, function(res){
       callback(res)
