@@ -4,16 +4,18 @@ var mdns = require('mdns');
 var browser = mdns.createBrowser(mdns.tcp('googlecast'));
 var deviceAddress;
 var language;
+var speechSpeed;
 
-var device = function(name, lang = 'en') {
+var device = function(name, lang = 'en', speed=1) {
   device = name;
   language = lang;
   return this;
 };
 
-var ip = function(ip, lang = 'en') {
+var ip = function(ip, lang = 'en', speed=1) {
   deviceAddress = ip;
   language = lang;
+  speechSpeed = speed
   return this;
 }
 
